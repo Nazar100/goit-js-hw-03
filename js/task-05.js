@@ -7,10 +7,16 @@ const products = [
 
 const getAllPropValues = function (arr, prop) {
   const names = [];
+
   for (const proper of arr) {
-    if (proper.prop) {
-      names.push(proper);
+    const properties = Object.keys(proper);
+    // let mes = properties.indexOf(prop);
+    // console.log(proper[prop]);
+
+    if (!properties.includes(prop)) {
+      return names;
     }
+    names.push(proper[prop]);
   }
   return names;
 };
